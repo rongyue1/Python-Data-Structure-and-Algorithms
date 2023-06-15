@@ -44,12 +44,11 @@ class LinkedList:
             self.tail = None
         return temp
 
-    ## WRITE PREPEND METHOD HERE ##
-    #                             #
-    #                             #
-    #                             #
-    #                             #
-    ###############################
+    def prepend(self, value):
+        new_node = Node(value)
+        new_node.next = self.head
+        self.head = new_node
+        self.length += 1
 
 
 
