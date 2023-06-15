@@ -2,7 +2,7 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-        
+
 
 class LinkedList:
     def __init__(self, value):
@@ -16,7 +16,7 @@ class LinkedList:
         while temp is not None:
             print(temp.value)
             temp = temp.next
-        
+
     def append(self, value):
         new_node = Node(value)
         if self.length == 0:
@@ -28,14 +28,16 @@ class LinkedList:
         self.length += 1
         return True
 
-    ### WRITE POP METHOD HERE ###
-    #                           #
-    #                           #
-    #                           #
-    #                           #
-    #############################
-
- 
+    def pop(self):
+        if self.length == 0:
+            return None
+        pre = self.head
+        while pre.next:
+            self.tail = pre
+            pre = pre.next
+        self.tail.next = None
+        self.length -= 1
+        return pre
 
 
 my_linked_list = LinkedList(1)
